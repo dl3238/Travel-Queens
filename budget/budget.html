@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+ <title>Budget</title>
+
+<head>
+  <!-- css -->
+  <link rel="stylesheet" href="./budget-style.css">
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Mountains+of+Christmas|Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+
+<body>
+
+  <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/3.1.3/tippy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+
+ <!-- intro -->
+ <div class="intro">
+  <h1>Budget Tool</h1>
+  <p>Once you know where you are going, the next step is to think about your budget. <br> Below are a list of areas which commonly require expense planning during a trip. <br> For your convenince, we have provided an estimate cost of each area for your consideration.
+ </p>
+
+ </div>
+
+ <!--  first set of questions  -->
+ <div class="container">
+  <div class="form">
+   <!-- Ask user for days left until trip -->
+   <div onchange="needToSave()" class="form-group row">
+    <label for="date" class="col-sm-4 col-form-label offset-1">
+     How many more days until you leave?
+    </label>
+    <div class="col-sm-2">
+     <input id="leftDate" type="number" class="form-control" id="date">
+    </div>
+   </div>
+  </div>
+  <!-- Ask lenght of the trip-->
+  <div class="form">
+    <div onchange="updateCostPerDay(); placeholder()" class="form-group row">
+     <label for="number" class="col-sm-4 col-form-label offset-1">
+      How long is your trip?
+     </label>
+     <div class="col-sm-2">
+      <input id="amountOfDays" type="number" class="form-control" id="date">
+     </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Chart updated by input given by the user -->
+ <!-- Based on pen created by Eric Sadowski  -->
+ <!-- https://codepen.io/ejsado/pen/cLrlm -->
+ <div class="container d-flex justify-content-center align-items-center align-self-center">
+  <div class="row">
+   <div class="col-3">
+    <section>
+     <!--    Chart   -->
+     <div class="pieID pie"> </div>
+     <br><br><br>
+     <!--  Input for budget  -->
+     <div id="selection">
+      <ul id="chart" class="pieID legend">
+       <li>
+       </li>
+      </ul>
+     </div>
+    </section>
+   </div>
+   <!--   sections of the budget     -->
+   <div class="col-5">
+    <div class="container">
+     <div class="card" style="width: 30rem;">
+      <ul class="list-group">
+       <!--    food input     -->
+       <li id="food" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Food</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputFood" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    flight input     -->
+       <li id="flight" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Flight</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputFlight" type="number" class="form-control col-sm-3 form-control-lg" placeholder="" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    lodging input     -->
+       <li id="lodging" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Lodging</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputLodging" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    transportation input     -->
+       <li id="transport" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Transport</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputTransportation" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--     Activities input      -->
+       <li id="activities" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Activities</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputActivities" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    Extra input     -->
+       <li id="extras" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Extras</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputExtras" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+      </ul>
+     </div>
+     <!--   total output    -->
+     <div class="d-flex flex-row justify-content-center input-group mb-3">
+      <label class="col-sm-4 col-form-label labelButton"> Total</label>
+      <div class="d-flex flex-row justify-content-center input-group-prepend">
+       <span class="input-group-text">$</span>
+      </div>
+      <input id="total" type="number" class="form-control col-sm-4 form-control-lg" aria-label="Amount (to the nearest dollar)" disabled>
+      <div class="d-flex flex-row justify-content-center input-group-append">
+       <span class="input-group-text">.00</span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--  Output amout cost per day of trip   -->
+    <div class="cards col-sm-3 offset-1">
+     <div class="card">
+      <div class="card-body">
+       <h5 class="card-title">Just so you know...</h5>
+       <div id="costPerDay" class="card-text"></div>
+      </div>
+     </div>
+     <br><br>
+     <!--   Amount need to save per days left  -->
+     <div class="card">
+      <div class="card-body">
+       <h5 class="card-title">Remember...</h5>
+       <div id="needToSave" class="card-text"></div>
+       <a href="https://www.thesimpledollar.com/little-steps-100-great-tips-for-saving-money-for-those-just-getting-started/" class="btn btn-primary">Read more about it!</a>
+      </div>
+     </div>
+    </div>
+  </div>
+ </div>
+
+ <script>
+ //chart
+ var data = [{
+     type: "Food",
+     value: 1
+   },
+   {
+     type: "Flight",
+     value: 1
+   },
+   {
+     type: "Lodging",
+     value: 1
+   },
+   {
+     type: "Transport",
+     value: 1
+   },
+   {
+     type: "Activities",
+     value: 1
+   },
+   {
+     type: "Extras",
+     value: 1
+   }
+ ];
+ var listData = [
+   data[0].value,
+   data[1].value,
+   data[2].value,
+   data[3].value,
+   data[4].value,
+   data[5].value
+ ];
+ var inputFood = document.querySelector("#inputFood");
+ var inputFlight = document.querySelector("#inputFlight");
+ var inputLodging = document.querySelector("#inputLodging");
+ var inputTransportation = document.querySelector("#inputTransportation");
+ var inputActivities = document.querySelector("#inputActivities");
+ var inputExtras = document.querySelector("#inputExtras");
+ var todosEl = document.querySelector("#chart");
+
+ function update() {
+   //   update data
+   if (data != "") {
+     for (item of data) {
+       if (item.type == "Food") {
+         item.value = Number(inputFood.value);
+       } else if (item.type == "Flight") {
+         item.value = Number(inputFlight.value);
+       } else if (item.type == "Lodging") {
+         item.value = Number(inputLodging.value);
+       } else if (item.type == "Transport") {
+         item.value = Number(inputTransportation.value);
+       } else if (item.type == "Activities") {
+         item.value = Number(inputActivities.value);
+       } else {
+         item.value = Number(inputExtras.value);
+       }
+     }
+   }
+   listData = [
+     data[0].value,
+     data[1].value,
+     data[2].value,
+     data[3].value,
+     data[4].value,
+     data[5].value
+   ];
+   updateBudget();
+   createPie(".pieID.legend", ".pieID.pie");
+   updateTotal();
+   updateCostPerDay();
+   needToSave();
+   //placeholder();
+ }
+
+ function updateBudget() {
+   var todosHTML = "";
+   for (item of data) {
+     if (item.type == "Flight") {
+       todosHTML += `<li id="flight">`;
+       todosHTML += `<em>${item.type}</em>`;
+       todosHTML += `<span>${item.value}</span>`;
+     } else if (item.type == "Lodging") {
+       todosHTML += `<li id="lodging">`;
+       todosHTML += `<em>${item.type}</em>`;
+       todosHTML += `<span>${item.value}</span>`;
+     } else if (item.type == "Food") {
+       todosHTML += `<li id="food">`;
+       todosHTML += `<em>${item.type}</em>`;
+       todosHTML += `<span>${item.value}</span>`;
+     } else if (item.type == "Transport") {
+       todosHTML += `<li id="transportation"`;
+       todosHTML += `<em>${item.type}</em>`;
+       todosHTML += `<span>${item.value}</span>`;
+     } else if (item.type == "Activities") {
+       todosHTML += `<li id="activities">`;
+       todosHTML += `<em>${item.type}</em>`;
+       todosHTML += `<span>${item.value}</span>`;
+     } else if (item.type == "Extras") {
+       todosHTML += `<li id="extras">`;
+       todosHTML += `<em>${item.type}</em>`;
+       todosHTML += `<span>${item.value}</span>`;
+     }
+     todosHTML += `</li>`;
+   }
+   todosEl.innerHTML = todosHTML;
+ }
+
+ function updateTotal() {
+   var listTotal = 0;
+   for (var i = 0; i < listData.length; i++) {
+     listTotal += listData[i];
+   }
+   document.getElementById("total").value = `${listTotal}`;
+ }
+
+ //
+ function sliceSize(dataNum, dataTotal) {
+   return dataNum / dataTotal * 360;
+ }
+
+ function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+   $(pieElement).append("<div class='slice " + sliceID + "'><span></span></div>");
+   var offset = offset - 1;
+   var sizeRotation = -179 + sliceSize;
+   $("." + sliceID).css({
+     transform: "rotate(" + offset + "deg) translate3d(0,0,0)"
+   });
+   $("." + sliceID + " span").css({
+     transform: "rotate(" + sizeRotation + "deg) translate3d(0,0,0)",
+     "background-color": color
+   });
+ }
+
+ function iterateSlices(
+   sliceSize,
+   pieElement,
+   offset,
+   dataCount,
+   sliceCount,
+   color
+ ) {
+   var sliceID = "s" + dataCount + "-" + sliceCount;
+   var maxSize = 179;
+   if (sliceSize <= maxSize) {
+     addSlice(sliceSize, pieElement, offset, sliceID, color);
+   } else {
+     addSlice(maxSize, pieElement, offset, sliceID, color);
+     iterateSlices(
+       sliceSize - maxSize,
+       pieElement,
+       offset + maxSize,
+       dataCount,
+       sliceCount + 1,
+       color
+     );
+   }
+ }
+
+ function createPie(dataElement, pieElement) {
+   var listTotal = getTotal();
+   var offset = 0;
+   var color = [
+     "cornflowerblue",
+     "olivedrab",
+     "orange",
+     "tomato",
+     "crimson",
+     "purple",
+     "turquoise",
+     "forestgreen",
+     "navy",
+     "gray"
+   ];
+   for (var i = 0; i < listData.length; i++) {
+     var size = sliceSize(listData[i], listTotal);
+     iterateSlices(size, pieElement, offset, i, 0, color[i]);
+     $(dataElement + " li:nth-child(" + (i + 1) + ")").css(
+       "border-color",
+       color[i]
+     );
+     offset += size;
+   }
+ }
+ createPie(".pieID.legend", ".pieID.pie");
+
+ function getTotal() {
+   var listTotal = 0;
+   for (var i = 0; i < listData.length; i++) {
+     listTotal += listData[i];
+   }
+   return listTotal;
+ }
+
+ // Cost per day
+ var amountOfDays = document.querySelector("#amountOfDays");
+
+
+
+ function placeholder() {
+   //  placeholder suggestion cost for food
+   var amountFood = Number(amountOfDays.value) * 30;
+   document.getElementById("inputFood").placeholder = `${amountFood}`;
+   //  placeholder suggestion cost for lodging
+   var amountLodging = Number(amountOfDays.value) * 150;
+   document.getElementById("inputLodging").placeholder = `${amountLodging}`;
+   //  placeholder suggestion cost for transport
+   var amountTransport = Number(amountOfDays.value) * 10;
+   document.getElementById("inputTransportation").placeholder = `${amountTransport}`;
+   //  placeholder suggestion cost for activities
+   var amountActivities = Number(amountOfDays.value) * 50;
+   document.getElementById("inputActivities").placeholder = `${amountActivities}`;
+   //  placeholder suggestion cost for extras
+   var amountExtras = Number(amountOfDays.value) * 20;
+   document.getElementById("inputExtras").placeholder = `${amountExtras}`;
+ }
+
+
+
+ var todosCost = document.querySelector("#costPerDay");
+ // Update cost per day
+ function updateCostPerDay() {
+   var listTotal = getTotal();
+   var costPerDay = listTotal / Number(amountOfDays.value);
+
+   var todosHTML = "";
+
+   todosHTML += `For your ${Number(amountOfDays.value)} day trip,`;
+   todosHTML += `<p> it will cost you  $\ ${costPerDay} per day.</p>`;
+   todosCost.innerHTML = todosHTML;
+ }
+
+ // Amount need to save per days left
+ var leftDate = document.querySelector("#leftDate");
+ var todosSave = document.querySelector("#needToSave");
+
+ function needToSave() {
+   //calculate todays date
+   var listTotal = getTotal();
+   var needToSave = listTotal / Number(leftDate.value);
+
+   var todosHTML = "";
+   todosHTML += `You have ${Number(leftDate.value)} days until your trip.`;
+   todosHTML += `<p> You will need to save $\ ${needToSave} per day.</p>`;
+   todosSave.innerHTML = todosHTML;
+ }
+
+ /* more information */
+ tippy("#food", {
+   content: "Estimate how much you will need for the complete trip.",
+   delay: 100,
+   arrow: true,
+   arrowType: "round",
+   size: "large",
+   duration: 500,
+   animation: "scale"
+ });
+
+ tippy("#flight", {
+   content: "Remember to include all the cost of flights you might take.",
+   delay: 100,
+   arrow: true,
+   arrowType: "round",
+   size: "large",
+   duration: 500,
+   animation: "scale"
+ });
+ tippy("#lodging", {
+   content: "Be selective and think about the places you want to visit when choosing where you are staying.",
+   delay: 100,
+   arrow: true,
+   arrowType: "round",
+   size: "large",
+   duration: 500,
+   animation: "scale"
+ });
+ tippy("#transport", {
+   content: "Estimate how much you will need for the complete trip. It could be helpful to research cost of public transportation, taxi fares, etc.",
+   delay: 100,
+   arrow: true,
+   arrowType: "round",
+   size: "large",
+   duration: 500,
+   animation: "scale"
+ });
+ tippy("#activities", {
+   content: "Estimate how much you will need for the complete trip. It could be helpful to research cost of the activities and places you are interested in visiting.",
+   delay: 100,
+   arrow: true,
+   arrowType: "round",
+   size: "large",
+   duration: 500,
+   animation: "scale"
+ });
+ tippy("#extras", {
+   content: "Budget an amount you think will be good to have as extra.",
+   delay: 100,
+   arrow: true,
+   arrowType: "round",
+   size: "large",
+   duration: 500,
+   animation: "scale"
+ });
+
+
+ </script>
+</body>
+
+ </html>
