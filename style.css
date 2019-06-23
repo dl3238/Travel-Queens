@@ -1,0 +1,98 @@
+body {
+ background-color: white;
+}
+
+#travelCarousel {
+ padding-bottom: 5px;
+ position: relative;
+ width:100%;
+ margin-top: 2px;
+}
+
+.carousel-caption {
+ font-family: palatino;
+ color: white;
+ text-shadow: 2px 2px 8px #32ab96;
+}
+
+a:hover {
+ background-color: hsla(0, 100%, 90%, 0.3);
+}
+
+.top-right {
+ position: absolute;
+ top: 8px;
+ right: 16px;
+ color: white;
+ font-style: italic;
+}
+
+h1 {
+ font-family: "Black And White Picture", sans-serif !important;
+}
+
+h2 {
+ font-family: "Black And White Picture", sans-serif !important;
+ color: #32ab96;
+}
+
+h3 {
+ text-align: center;
+ font-family: "Dancing Script", cursive !important;
+}
+
+h4 {
+ font-family: "Dancing Script", cursive !important;
+ font-size: 30px !important;
+ text-align: center;
+}
+
+h6 {
+ font-style: italic;
+ color: gray;
+}
+
+p {
+ padding-left: 20px;
+ padding-bottom: 10px;
+}
+
+.center {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.column {
+ float: left;
+ width: 33.33%;
+}
+
+.footer {
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ background-color: #32ab96;
+ color: white;
+ text-align: center;
+}
+
+.w3-card-4 {
+ background-color: #32ab96;
+}
+
+
+button:active {
+ transform: translatey(3px);
+}
+
+/* This is an advanced rule I'm using to help me see your alignment.
+It basically says SELECT attribute CLASS that STARTS WITH "column" will be selected */
+[class^="column"] {
+ outline: 1px dashed grey;
+}
+
+.navTitle{
+  font-family: "Dancing Script", cursive !important;
+ font-size: 25px !important;
+}

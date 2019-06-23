@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<title>Traveling - Melissa, Brenda, Maria, Dongxin</title>
+
+<head>
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fontawesome -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--for cards-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--JS  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.5/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <!--Nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand navTitle" href="#">Travel Queens</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#travelCarousel">Home <span class="sr-only" </span> </a> </li> <li class="nav-item">
+              <a class="nav-link" href="#about">Current post</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Other posts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item">Fun festivities</a>
+            <a class="dropdown-item">Touristy things</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">Immerse like a local</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!--Carousel-->
+  <div id="travelCarousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#travelCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#travelCarousel" data-slide-to="1"></li>
+      <li data-target="#travelCarousel" data-slide-to="2"></li>
+      <li data-target="#travelCarousel" data-slide-to="3"></li>
+      <li data-target="#travelCarousel" data-slide-to="4"></li>
+      <li data-target="#travelCarousel" data-slide-to="5"></li>
+      <li data-target="#travelCarousel" data-slide-to="6"></li>
+      <li data-target="#travelCarousel" data-slide-to="7"></li>
+      <li data-target="#travelCarousel" data-slide-to="8"></li>
+      <li data-target="#travelCarousel" data-slide-to="9"></li>
+    </ol>
+
+    <!-- Wrapper -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="top-right">Thanks to Travel Queens, I was able to learn more about myself as a traveler! - Benny Boo</div>
+        <img class="location1" src="https://images.unsplash.com/photo-1441484295955-db07de1fdbad?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="First slide">
+        <div class="carousel-caption">
+          <h5>Galicia</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“Be fearless in the pursuit of what sets your soul on fire.” – Jennifer Lee</div>
+        <img class="location2" src="https://images.unsplash.com/photo-1532690671373-229d09573d2e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Second slide">
+        <div class="carousel-caption">
+          <h5>China</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta</div>
+        <img class="location3" src="https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=352349d95c8d97a507264179ca931f74" height="600px" width="100%"
+          alt="Third slide">
+        <div class="carousel-caption">
+          <h5>United States</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“The journey not the arrival matters.” –T.S. Eliot</div>
+        <img class="location4" src="https://images.unsplash.com/photo-1525968635328-37e2ce22d2d2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Fourth slide">
+        <div class="carousel-caption">
+          <h5>Jamaica</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“Travel and change of place impart new vigor to the mind.” – Seneca</div>
+        <img class="location5" src="https://images.unsplash.com/photo-1509713086752-a3747b6ee54a?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Fifth slide">
+        <div class="carousel-caption">
+          <h5>Romania</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“One’s destination is never a place, but a new way of seeing things.” - Henry Miller</div>
+        <img class="location6" src="https://images.unsplash.com/photo-1461541105256-d1b2346700f2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Sixth slide">
+        <div class="carousel-caption">
+          <h5>Puerto Rico</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“Go, fly, roam, travel, voyage, explore, journey, discover, adventure.” - Anonymous</div>
+        <img class="location7" src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Seventh slide">
+        <div class="carousel-caption">
+          <h5>Africa</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“All journeys have secret destinations of which the traveler is unaware.” - Martin Buber</div>
+        <img class="location8" src="https://images.unsplash.com/photo-1496939376851-89342e90adcd?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Eighth slide">
+        <div class="carousel-caption">
+          <h5>Singapore</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“Do not follow where the path may lead. Go instead where there is no path and leave a trail” - Ralph Waldo Emerson</div>
+        <img class="location9" src="https://images.unsplash.com/photo-1512617883304-3affd6c4b94e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Ninth slide">
+        <div class="carousel-caption">
+          <h5>Colombia</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="top-right">“We travel, some of us forever, to seek other states, other lives, other souls.” - Anaïs Nin</div>
+        <img class="location10" src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" height="600px" width="100%" alt="Tenth slide">
+        <div class="carousel-caption">
+          <h5>Japan</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prev and Next controls -->
+    <a class="carousel-control-prev" href="#travelCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+    <a class="carousel-control-next" href="#travelCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+  </div>
+
+  <br>
+
+  <!--blog date-->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h6>Posted: December 18, 2018, 2:50 PM</h6>
+      </div>
+      <!-- music -->
+      <audio controls autoplay>
+        <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2346469/MBB%20-%20Feel%20Good%20(Vlog%20No%20Copyright%20Music).mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  <br>
+  <!-- blog intro -->
+  <div id="about" class="container">
+    <h2 class="heading">A simple blueprint to get you off your couch and into the world...</h2>
+    <div class="row">
+      <div class="col-8">
+        <p>Trip planning can be a daunting task. Where should you go? How can you get there? What should you do? It’s easy to get overwhelmed.</p>
+        <p>Fret not. We’ve made it our task to help you get out the door and into the world. Just follow these steps and you’ll be out of here in no time.</p>
+
+        <div class="row">
+          <div class="column">
+            <img src="https://images.unsplash.com/photo-1458040937381-49c067dfd49a?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="research" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://images.unsplash.com/photo-1530469525856-cf37954301f7?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="passport" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt="travels" style="width:100%">
+          </div>
+        </div>
+      </div>
+
+      <!--Blog card-->
+      <div class="col-4">
+        <div class="w3-card-4">
+          <header class="w3-container">
+            <h3>Travel Queens</h3>
+          </header>
+          <img src="http://i67.tinypic.com/2aj4d2w.jpg" height="200px" width="290px" alt="bloggers" class="center w3-border w3-padding">
+          <p>Hi! We are the Travel Queens. We come from all parts of the world, and have traveled over 30 countries. We learned so much about ourselves before, during, and after the travels, so we wanted to share some tips with you!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 1 -->
+  <div id="Step1" class="container">
+    <h1 class="heading">Step 1: Decide where to go</h1>
+    <div class="row">
+      <div class="col-8">
+        <ul>
+          <li>Picking a destination is immensely important, as it gives you a definite goal. It's a lot easier to mentally get behind "I am going to Paris" than "I'm going to Europe" or "I'm going somewhere." Not only will your trip become more
+            concrete for you
+            and easier to commit to, but it will make planning easier as well...because you know what to work towards.</li>
+          <li><b>What if you don't know where to go?</b> Don't worry, we've got you covered. The first part of deciding where you want to go on your trip is to determine your traveling "personality," that is, how you identify yourself as a traveler,
+            the passion
+            behind your planning, your <i>modus operandi</i> if you will.</li>
+          <li><span style="color: #32ab96;font-weight: bold"><a href="https://codepen.io/bk2697/live/EGjvyP" target="_blank">This quiz</a></span> will help you identify your travel personality. You can use it to establish an overarching theme for
+            your plan and
+            to narrow down your choices on places to visit.</li>
+        </ul>
+      </div>
+
+      <div class="col-4">
+        <div class="w3-card-4">
+          <h4>Subscribe!</h4>
+          <p>Join over 1 million people, and get exclusive travel tips and more!</p>
+          <!--form-->
+          <form>
+            <input class="center" type="text" name="firstName" placeholder="First Name">
+            <br>
+            <input class="center" type="email" name="email" placeholder="Email">
+            <br><br>
+            <button type="button" class="btn center">Sign me up!</button>
+          </form>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div id="Step2" class="container">
+    <h1 class="heading">Step 2: Budget For Your Trip</h1>
+    <div class="row">
+      <div class="col">
+        <p>Travel expenses can vary greatly depending on how you like to travel, so it’s important to make a travel budget <b>early on</b>. We’ve provided you with some items you probably should consider when budgeting for that dream vacation. We’ve
+          also included
+          a travel budget calculator for you to keep track of your travel expenses.</p>
+        <ul>
+          <li>Flights - You need to get to your vacation destination, and unless you’re just driving a few hours away from home, this will probably be a big part of your budget. Start your <span style="color: #32ab96;font-weight: bold"><a
+                href="https://www.expedia.com/Flights" target="_blank">research here</a></span> to get an estimate for what this will cost.</li>
+          <li>Local Transport - Chances are you will need transportation once you arrive at your destination. Public transportation is a great option in most cases because it’s inexpensive and it gives you a more local perspective. A simple search on
+            the internet
+            for public transportation in the city you’re going to should lead you to how much tickets cost. Also factor in taxis if you think you might need a taxi from the airport or within the city.</li>
+          <li>Accommodation - Lodging can also be a big part of your budget depending on where you like to stay. Decide what type of <span style="color: #32ab96;font-weight: bold"><a
+                href="https://www.travelanddestinations.com/what-are-the-different-accommodation-types-available-for-your-travels/" target="_blank">accommodation</a></span> you prefer, whether it’s hotels, hostels or guesthouses, or apartment
+            rentals, read the <u>reviews</u>, and see what the prices are for the area you want to visit. Be sure to multiply by the number of nights you will be there.</li>
+          <li>Meals</li>
+          <li>Activities - Will you be taking any <span style="color: #32ab96;font-weight: bold"><a href="https://www.taketours.com/" target="_blank">tours</a></span> on your vacation? Are there entrance fees for museums, parks, ruins, or other
+            attractions? Do
+            you plan on doing something more expensive like scuba diving or a hot air balloon ride? Add up these travel costs too, and make sure you know what is and is not included.</li>
+          <li>Coming up with a realistic travel budget is an important part of planning your vacation. Use <span style="color: #32ab96;font-weight: bold"><a href="https://codepen.io/bk2697/live/REPjbN" target="_blank">this budget tool</a></span> to
+            assist you
+            when planning for your trip! It lets you know if this is a trip you can afford and how much you need to save. It also gives you an idea of where you can cut costs to make the trip less expensive.</li>
+
+          <br>
+          <b>REMEMBER</b> “You’re never too poor to travel” but you might have to compromise on some items.
+          <br> PS – Saving on the small things can make a huge difference. Look at your <b>day-to-day</b> spending. How much would you <i>save</i> if you gave up Starbucks, cooked more of your own food, or drank less?
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div id="Step3" class="container">
+    <h1 class="heading">Step 3: To-do List before flying</h1>
+    <div class="row">
+      <div class="col">
+        <p>There’s always a risk that something goes wrong turning that dream vacation into a nightmare. Don’t worry, you don’t have to start hyperventilating. We’ve put together a <span style="color: #32ab96;font-weight: bold"><a
+              href="https://codepen.io/bk2697/live/XoWJOZ" target="_blank">To-Do list</a></span> that you can take on to minimize the chances of this happening (feel free to add your own items to the list as well). Remember, every item checked off
+          means you’re one step closer to that vacation at the finishing line. There are steps you can take
+          to minimize the chances of this happening.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--comment box-->
+  <div class="container">
+    <h1>Have questions or comments?</h1>
+    <form>
+      <div class="form-group">
+        <label for="comment">Type below:</label>
+        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+      </div>
+      <button type="button" class="btn btn-secondary pull-right">Submit</button>
+    </form>
+    <br>
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <div class="footer">
+    <button type="button" class="btn btn-primary"><i class="fa fa-facebook-square"></i></button>
+    <button type="button" class="btn btn-danger"><i class="fa fa-instagram"></i></button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary"><i class="fa fa-twitter"></i></button>
+    </div>
+</body>
+
+</html>
