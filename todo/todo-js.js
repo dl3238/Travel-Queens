@@ -29,7 +29,7 @@ var data = [
     id: 1497141937546,
     task: "Passport: check for expiration and pages",
     done: false,
-    type: "month"   
+    type: "month"
   },
   {
     id: 1497141937547,
@@ -85,7 +85,7 @@ var data = [
     done: false,
     type: "week",
   }
-  
+
 ];
 // filter events;
 
@@ -110,54 +110,21 @@ function initializeTodos() {
 	updateTodoItems();
 }
 
-// function updateTodoItems(){
-//   var monthHTML = "";
-//   var weekHTML = "";
-  
-//   var selection = document.getElementsById('selection').value;
-//   for (todo of data){
-//     if (todo.done == false && todo.type =="month"){
-//       monthHTML += `<li id="${ todo.id }" onclick="toggleComplete(event)" class="month">`;
-// 			monthHTML += `<i class="fa fa-circle-o"></i>`;
-//     } else if (todo.done == false && todo.type =="week"){
-//             weekHTML += `<li id="${ todo.id }" onclick="toggleComplete(event)" class="week">`;
-// 			weekHTML += `<i class="fa fa-circle-o"></i>`; 
-//     }
-//     else { 			monthHTML += `<li id="${ todo.id }" class="complete" onclick="toggleComplete(event)">`;
-//  			monthHTML += `<i class="fa fa-check-circle-o"></i>`;               weekHTML += `<li id="${ todo.id }" class="complete" onclick="toggleComplete(event)">`;
-//  			weekHTML += `<i class="fa fa-check-circle-o"></i>`; }
-//     	if (monthHTML === "") {
-// 		monthHTML = "<li>Nothing todo...</li>";
-// 	}
-// 	todosMonth.innerHTML = monthHTML;
-//   todosWeek.innerHTML = weekHTML;
-// 	updateRemoveBtn();
-    
-//   }
-// }
 function updateTodoItems() {
-	
+
   var monthHTML = "";
-  var weekHTML = ""; 
-  
+  var weekHTML = "";
+
   var selection = document.getElementById('selection').value;
   debugger;
 	for (todo of data) {
-    
-    // if (todo.type == "month") {
-    //   monthHTML += `<li id="${ todo.id }" class="${todo.done ? 'complete' : ''}" onclick="toggleComplete(event)">`;
-    //   monthHTML += `<i class="fa fa-check-circle-o"></i>${ todo.task }</li>`;
-    // } else {
-    //   weekHTML += `<li id="${ todo.id }" class="${todo.done ? 'complete' : ''}" onclick="toggleComplete(event)">`;
-    //   weekHTML += `<i class="fa fa-check-circle-o"></i>${ todo.task }</li>`;
-    // }
-    
+
 		if (todo.done && todo.type =="month") {
 			monthHTML += `<li id="${ todo.id }" class="complete" onclick="toggleComplete(event)">`;
 			monthHTML += `<i class="fa fa-check-circle-o"></i>${ todo.task }</li>`;
 		} else if (todo.done && todo.type =="week") {
 		weekHTML += `<li id="${ todo.id }" class="complete" onclick="toggleComplete(event)">`;
-			weekHTML += `<i class="fa fa-check-circle-o"></i>${ todo.task }</li>`; 
+			weekHTML += `<i class="fa fa-check-circle-o"></i>${ todo.task }</li>`;
 		}
 		else if(todo.type == "month"){
 		monthHTML += `<li id="${ todo.id }" onclick="toggleComplete(event)" class="month">`;
@@ -165,20 +132,8 @@ function updateTodoItems() {
 		}
 		else if(todo.type == "week"){
 		weekHTML += `<li id="${ todo.id }" onclick="toggleComplete(event)" class="week">`;
-			weekHTML += `<i class="fa fa-circle-o"></i>${ todo.task }</li>`; 
-		} 
-		// else{
-		// // alert('SElect cat');
-		// // 	// monthHTML += `<li id="${ todo.id }" onclick="toggleComplete(event)">`;
-		// // 	// monthHTML += `<i class="fa fa-circle-o"></i>`; 
-		// // 	// weekHTML += `<li id="${ todo.id }" onclick="toggleComplete(event)">`;
-		// // 	// weekHTML += `<i class="fa fa-circle-o"></i>`; 
-		// }
-
-		// monthHTML += `${ todo.task }`;
-		// monthHTML += `</li>`;
-		// weekHTML += `${ todo.task }`;
-		// weekHTML += `</li>`;
+			weekHTML += `<i class="fa fa-circle-o"></i>${ todo.task }</li>`;
+		}
 	}
 	if (monthHTML === "") {
 		monthHTML = "<li>Nothing todo...</li>";
@@ -229,7 +184,7 @@ function addTodoItem() {
 	newTodo.done = false;
   newTodo.type = document.getElementById('selection').value;
 	data.push(newTodo);
-  
+
   filterEvent();
 	updateTodoItems();
 	resetInput();
@@ -237,7 +192,7 @@ function addTodoItem() {
 
 function toggleComplete(event) {
 	var todoID = parseInt(event.currentTarget.id);
-  
+
 	var todoData = getTodoData(todoID);
 	todoData.done = !todoData.done;
 	updateTodoItems();

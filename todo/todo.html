@@ -5,9 +5,11 @@
 
 <head>
   <title>Todo List</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- css -->
+  <link rel="stylesheet" href="./todo-style.css">
+  <!--Font Awesome  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  
+  <!-- Google font -->
   <link href="https://fonts.googleapis.com/css?family=Bungee|Mountains+of+Christmas|Open+Sans+Condensed:300" rel="stylesheet">
 </head>
 
@@ -15,10 +17,10 @@
   <div class="fullpage black-bg centered">
     <div class="container">
       <h1 id="title1">TO-DO List</h1>
-      <h1 id="title2"> Before </h1> 
-        <h1 id="title3">INTERNATIONAL TRAVEL</h1>  
-      
-      
+      <h1 id="title2"> Before </h1>
+      <h1 id="title3">INTERNATIONAL TRAVEL</h1>
+
+
       <div class="container2">
         <div class="in-container2">
           <h2>Months Before</h2>
@@ -26,7 +28,7 @@
         <div class="in-container2">
           <h2>Weeks Before</h2>
         </div>
-        
+
       </div>
 
       <div class="todo-columns">
@@ -49,18 +51,16 @@
       <div class="controls">
         <input type="text" onkeypress="onEnterKey(event)">
         <select id="selection">
-      <option value="" disabled selected>Select category</option>
-      <option value="month">Months before (green)</option>
-      <option value="week">Weeks before (purple)</option>
-      
-    </select>
- </div>
-       
-        <div class="btn">
-          <button onclick="addTodoItem()">Add</button>
-          <button onclick="removeTodoItem()"><span id="counter"></span> Remove</button>
+          <option value="" disabled selected>Select category</option>
+          <option value="month">Months before (green)</option>
+          <option value="week">Weeks before (purple)</option>
 
-       
+        </select>
+      </div>
+
+      <div class="btn">
+        <button onclick="addTodoItem()">Add</button>
+        <button onclick="removeTodoItem()"><span id="counter"></span> Remove</button>
 
       </div>
 
@@ -68,6 +68,7 @@
 
   </div>
 
+  <script src="./todo-js.js"></script>
 </body>
 
 </html>
