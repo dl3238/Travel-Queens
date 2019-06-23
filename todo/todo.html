@@ -1,0 +1,73 @@
+<!--Thanks Jin Kuwata for the base code!-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Mountains+of+Christmas|Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+
+<body onLoad="updateItemsLeft()">
+  <div class="fullpage black-bg centered">
+    <div class="container">
+      <h1 id="title1">TO-DO List</h1>
+      <h1 id="title2"> Before </h1> 
+        <h1 id="title3">INTERNATIONAL TRAVEL</h1>  
+      
+      
+      <div class="container2">
+        <div class="in-container2">
+          <h2>Months Before</h2>
+        </div>
+        <div class="in-container2">
+          <h2>Weeks Before</h2>
+        </div>
+        
+      </div>
+
+      <div class="todo-columns">
+        <div class="todolist">
+          <ul id="todoM">
+
+            <!-- ACTIONS TODO HERE -->
+          </ul>
+
+        </div>
+        <div class="todolist">
+          <ul id="todoW">
+
+            <!-- ACTIONS TODO HERE -->
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="controls">
+        <input type="text" onkeypress="onEnterKey(event)">
+        <select id="selection">
+      <option value="" disabled selected>Select category</option>
+      <option value="month">Months before (green)</option>
+      <option value="week">Weeks before (purple)</option>
+      
+    </select>
+ </div>
+       
+        <div class="btn">
+          <button onclick="addTodoItem()">Add</button>
+          <button onclick="removeTodoItem()"><span id="counter"></span> Remove</button>
+
+       
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

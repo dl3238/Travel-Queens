@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+ <title>Budget</title>
+
+<head>
+ <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Bungee|Mountains+of+Christmas|Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+
+<body>
+ <!-- intro -->
+ <div class="intro">
+  <h1>Budget Tool</h1>
+  <p>Once you know where you are going, the next step is to think about your budget. <br> Below are a list of areas which commonly require expense planning during a trip. <br> For your convenince, we have provided an estimate cost of each area for your consideration.
+ </p>
+
+ </div>
+
+ <!--  first set of questions  -->
+ <div class="container">
+  <div class="form">
+   <!-- Ask user for days left until trip -->
+   <div onchange="needToSave()" class="form-group row">
+    <label for="date" class="col-sm-4 col-form-label offset-1">
+     How many more days until you leave?
+    </label>
+    <div class="col-sm-2">
+     <input id="leftDate" type="number" class="form-control" id="date">
+    </div>
+   </div>
+  </div>
+  <!-- Ask lenght of the trip-->
+  <div class="form">
+    <div onchange="updateCostPerDay(); placeholder()" class="form-group row">
+     <label for="number" class="col-sm-4 col-form-label offset-1">
+      How long is your trip?
+     </label>
+     <div class="col-sm-2">
+      <input id="amountOfDays" type="number" class="form-control" id="date">
+     </div>
+    </div>
+  </div>
+ </div>
+
+ <!-- Chart updated by input given by the user -->
+ <!-- Based on pen created by Eric Sadowski  -->
+ <!-- https://codepen.io/ejsado/pen/cLrlm -->
+ <div class="container d-flex justify-content-center align-items-center align-self-center">
+  <div class="row">
+   <div class="col-3">
+    <section>
+     <!--    Chart   -->
+     <div class="pieID pie"> </div>
+     <br><br><br>
+     <!--  Input for budget  -->
+     <div id="selection">
+      <ul id="chart" class="pieID legend">
+       <li>
+       </li>
+      </ul>
+     </div>
+    </section>
+   </div>
+   <!--   sections of the budget     -->
+   <div class="col-5">
+    <div class="container">
+     <div class="card" style="width: 30rem;">
+      <ul class="list-group">
+       <!--    food input     -->
+       <li id="food" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Food</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputFood" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    flight input     -->
+       <li id="flight" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Flight</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputFlight" type="number" class="form-control col-sm-3 form-control-lg" placeholder="" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    lodging input     -->
+       <li id="lodging" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Lodging</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputLodging" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    transportation input     -->
+       <li id="transport" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Transport</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputTransportation" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--     Activities input      -->
+       <li id="activities" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Activities</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputActivities" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+       <!--    Extra input     -->
+       <li id="extras" class="list-group-item">
+        <div onchange="update()" class="input-group mb-3">
+         <label class="col-sm-4 col-form-label">Extras</label>
+         <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+         </div>
+         <input id="inputExtras" type="number" class="form-control col-sm-3 form-control-lg" aria-label="Amount (to the nearest dollar)">
+         <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+         </div>
+        </div>
+       </li>
+      </ul>
+     </div>
+     <!--   total output    -->
+     <div class="d-flex flex-row justify-content-center input-group mb-3">
+      <label class="col-sm-4 col-form-label labelButton"> Total</label>
+      <div class="d-flex flex-row justify-content-center input-group-prepend">
+       <span class="input-group-text">$</span>
+      </div>
+      <input id="total" type="number" class="form-control col-sm-4 form-control-lg" aria-label="Amount (to the nearest dollar)" disabled>
+      <div class="d-flex flex-row justify-content-center input-group-append">
+       <span class="input-group-text">.00</span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--  Output amout cost per day of trip   -->
+    <div class="cards col-sm-3 offset-1">
+     <div class="card">
+      <div class="card-body">
+       <h5 class="card-title">Just so you know...</h5>
+       <div id="costPerDay" class="card-text"></div>
+      </div>
+     </div>
+     <br><br>
+     <!--   Amount need to save per days left  -->
+     <div class="card">
+      <div class="card-body">
+       <h5 class="card-title">Remember...</h5>
+       <div id="needToSave" class="card-text"></div>
+       <a href="https://www.thesimpledollar.com/little-steps-100-great-tips-for-saving-money-for-those-just-getting-started/" class="btn btn-primary">Read more about it!</a>
+      </div>
+     </div>
+    </div>
+  </div>
+ </div>
+</body>
+ 
+ </html>

@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    background-image: url('https://images.pexels.com/photos/297642/pexels-photo-297642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fullpage {
+    width: 100vw;
+}
+
+.black-bg {
+    background-color: rgba(0,0,0,0.8);
+  background-size:cover;
+}
+
+.centered {
+    display: flex;
+  flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+#title1 {
+  font-family: 'Bungee', cursive !important;
+  font-size:40px;
+  color:white;  
+}
+
+#title2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top:-20px;
+  color:#ccc;
+}
+#title3 {
+  font-family: 'Mountains of Christmas', cursive;
+  margin-top:-15px;
+}
+
+.container {
+    height: 100vh;
+    width: 65vw;
+    max-width: 700px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5);
+}
+.container2 {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  border:solid;
+  border-color:#ccc;
+}
+
+h2 {
+  color:whitesmoke;
+  
+}
+
+li {
+	cursor: pointer;
+  margin-top:5px;
+}
+
+button {
+    border: none;
+    padding: 5px 10px;
+  margin:5px;
+  border-radius:.5rem;
+}
+
+.btn {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  margin-top:10px;
+}
+
+.complete {
+	text-decoration: line-through;
+	font-style: italic;
+	color: gainsboro;
+}
+
+input, button {
+	font-size: 1rem;
+}
+
+a {
+	font-size: 50%;
+}
+
+i {
+	padding-right: 15px;
+}
+
+#pre {
+ font-size: 15px;
+ background-color: whitesmoke;
+ padding: 20px 5px 5px;
+}
+
+.month {
+  color: #80ffbf;
+}
+
+.week {
+  color: #ff80bf;
+}
+
+.todo-columns {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  font-size:18px;
+}
+
+.controls {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+#selection {
+  margin-left:8px;
+}
+
