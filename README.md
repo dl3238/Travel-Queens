@@ -1,5 +1,4 @@
 # Travel-Queens
-#### By: Melissa Yeo, Brenda Khor, Dongxin Li, Maria Lopez-Delgado
 
 A web app to help you plan your trips.
 * Live demo: https://dl3238.github.io/Travel-Queens/
